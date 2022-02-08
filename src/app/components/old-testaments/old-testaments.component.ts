@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-old-testaments',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./old-testaments.component.scss'],
 })
 export class OldTestamentsComponent implements OnInit {
+
+  @Input() hasHeader: boolean;
+  @Input() verse: string;
+  @Input() verseText: string;
 
   constructor() { }
 

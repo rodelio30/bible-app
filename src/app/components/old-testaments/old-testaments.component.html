@@ -1,5 +1,8 @@
-<ion-card-content>
-  <ion-button color="medium" size="full">Old Testament</ion-button>
-  <br>
-  <ion-button color="success" size="full">New Testament</ion-button>
-</ion-card-content>
+<ion-card>
+  <ion-card-header *ngIf="hasHeader">
+    <ion-card-title>Genesis 1</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <span class="span-f-size">{{verse}}</span>{{verseText}}
+  </ion-card-content>
+</ion-card>
