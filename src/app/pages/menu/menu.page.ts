@@ -2,25 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'app-menu',
+  templateUrl: './menu.page.html',
+  styleUrls: ['./menu.page.scss'],
 })
-export class HomePage implements OnInit {
+export class MenuPage implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
   home(){
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['home']);
   }
   dashboard(){
     this.router.navigate(['dashboard']);
   }
-  menu(){
-    this.router.navigate(['menu']);
-  }
-
 }

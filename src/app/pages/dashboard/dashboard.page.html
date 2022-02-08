@@ -1,19 +1,49 @@
+
 <ion-header>
-  <ion-toolbar color="success">
-    <ion-title class="ion-text-center">Genesis 1</ion-title>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-item>
+        <ion-input placeholder="Search"><ion-icon name="search-outline"></ion-icon></ion-input>
+      </ion-item>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <app-old-testaments
-    verse="1"
-    verseText=" Nang pasimula ay nilikha ng Diyos ang langit at ang lupa;[a]">
-  </app-old-testaments>
-  <app-old-testaments
-    verse="2"
-    verseText=" ang lupa ay walang hugis o anyo. Dilim ang bumabalot sa kalaliman at kumikilos ang Espiritu ng Diyos[b] sa ibabaw ng tubig.">
-  </app-old-testaments>
-  <app-old-testaments
-    verse="3"
-    verseText=" Sinabi ng Diyos: “Magkaroon ng liwanag!” At nagkaroon nga.">
-  </app-old-testaments>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <h4 style="float: left; padding-left:10px;">Old Testament</h4>
+        <ion-virtual-scroll [items]="oldTestamentItems">
+          <ion-card *virtualItem="let item; let itemBounds = bounds;">
+          <ion-card-header>
+            <ion-card-title>{{ item.name }}</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>{{ item.content }}</ion-card-content> -->
+          </ion-card>
+        </ion-virtual-scroll>
+      </ion-col>
+      <ion-col>
+        <h4 style="float: left; padding-left:10px;">New Testament</h4>
+        <ion-virtual-scroll [items]="newTestamentItems">
+          <ion-card *virtualItem="let item; let itemBounds = bounds;">
+          <ion-card-header>
+            <ion-card-title>{{ item.name }}</ion-card-title>
+          </ion-card-header>
+          <!-- <ion-card-content>{{ item.content }}</ion-card-content> -->
+          </ion-card>
+        </ion-virtual-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+	<!-- <ion-card *ngFor="let book of books; let index = index">
+		<ion-card-content>
+			<h2>{{ book }} </h2>
+		</ion-card-content>
+	</ion-card> -->
+
 </ion-content>

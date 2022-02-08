@@ -1,0 +1,14 @@
+ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 0;
+  --padding-start: 20px;
+  --padding-end: 20px;
+}
+ion-button[color="dark"] {
+  text-transform: initial;
+  color:black;
+}
+.first-btn {
+  --border-radius: 10px !important;
+  width:100%;
+}
